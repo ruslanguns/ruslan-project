@@ -30,6 +30,9 @@
     },
     "ui-ng-hola-mundo2": {
       "tags": ["ui"]
+    },
+    "shared-assets": {
+      "tags": ["scope:shared", "type:assets"]
     }
   }
 }

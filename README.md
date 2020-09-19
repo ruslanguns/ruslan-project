@@ -6,6 +6,7 @@ Este es un proyecto del canal de Ruslan Gonzalez
 
 ### Livecoding
 - [Parte 1 19-09-2020](https://www.youtube.com/watch?v=cG-iN4hRP_4): Mi primeros pasos con el monorepo NX
+- [Parte 2 9-09-2020](https://www.youtube.com/watch?v=H4-_9FOboUk): Extraemos el NX Workspace en librerías, en este vídeo hemos extraido los assets.
 
 
 >This project was generated using [Nx](https://nx.dev).
