@@ -44,8 +44,16 @@
             "tsConfig": "apps/ui/ng-hola-mundo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/ui/ng-hola-mundo/src/favicon.ico",
-              "apps/ui/ng-hola-mundo/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": ["apps/ui/ng-hola-mundo/src/styles.scss"],
             "scripts": []
@@ -230,6 +238,18 @@
             "jestConfig": "apps/ui/ng-hola-mundo2/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "prefix": "ruslan-project",
+      "architect": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }
