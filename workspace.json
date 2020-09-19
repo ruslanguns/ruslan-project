@@ -1,7 +1,250 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "ui-ng-hola-mundo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/ui/ng-hola-mundo",
+      "sourceRoot": "apps/ui/ng-hola-mundo/src",
+      "prefix": "ruslan-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ui/ng-hola-mundo",
+            "index": "apps/ui/ng-hola-mundo/src/index.html",
+            "main": "apps/ui/ng-hola-mundo/src/main.ts",
+            "polyfills": "apps/ui/ng-hola-mundo/src/polyfills.ts",
+            "tsConfig": "apps/ui/ng-hola-mundo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ui/ng-hola-mundo/src/favicon.ico",
+              "apps/ui/ng-hola-mundo/src/assets"
+            ],
+            "styles": ["apps/ui/ng-hola-mundo/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ui/ng-hola-mundo/src/environments/environment.ts",
+                  "with": "apps/ui/ng-hola-mundo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ui-ng-hola-mundo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ui-ng-hola-mundo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ui-ng-hola-mundo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ui/ng-hola-mundo/tsconfig.app.json",
+              "apps/ui/ng-hola-mundo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ui/ng-hola-mundo/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ui/ng-hola-mundo/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-ng-hola-mundo2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/ui/ng-hola-mundo2",
+      "sourceRoot": "apps/ui/ng-hola-mundo2/src",
+      "prefix": "ruslan-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ui/ng-hola-mundo2",
+            "index": "apps/ui/ng-hola-mundo2/src/index.html",
+            "main": "apps/ui/ng-hola-mundo2/src/main.ts",
+            "polyfills": "apps/ui/ng-hola-mundo2/src/polyfills.ts",
+            "tsConfig": "apps/ui/ng-hola-mundo2/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ui/ng-hola-mundo2/src/favicon.ico",
+              "apps/ui/ng-hola-mundo2/src/assets"
+            ],
+            "styles": ["apps/ui/ng-hola-mundo2/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ui/ng-hola-mundo2/src/environments/environment.ts",
+                  "with": "apps/ui/ng-hola-mundo2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ui-ng-hola-mundo2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ui-ng-hola-mundo2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ui-ng-hola-mundo2:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ui/ng-hola-mundo2/tsconfig.app.json",
+              "apps/ui/ng-hola-mundo2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ui/ng-hola-mundo2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ui/ng-hola-mundo2/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "ui-ng-hola-mundo"
 }
