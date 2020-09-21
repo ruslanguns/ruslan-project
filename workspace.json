@@ -55,7 +55,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/ui/ng-hola-mundo/src/styles.scss"],
+            "styles": [
+              "libs/shared/styles/src/lib/hola-mundo/index.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -179,7 +181,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/ui/ng-hola-mundo2/src/styles.scss"],
+            "styles": [
+              "libs/shared/styles/src/lib/hola-mundo/index.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -253,6 +257,18 @@
       "projectType": "library",
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets/src",
+      "prefix": "ruslan-project",
+      "architect": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
       "prefix": "ruslan-project",
       "architect": {},
       "schematics": {
