@@ -168,8 +168,16 @@
             "tsConfig": "apps/ui/ng-hola-mundo2/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/ui/ng-hola-mundo2/src/favicon.ico",
-              "apps/ui/ng-hola-mundo2/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": ["apps/ui/ng-hola-mundo2/src/styles.scss"],
             "scripts": []
