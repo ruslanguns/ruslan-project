@@ -26,13 +26,27 @@
   },
   "projects": {
     "ui-ng-hola-mundo": {
-      "tags": ["ui"]
+      "tags": ["ui"],
+      "implicitDependencies": [
+        "shared-assets",
+        "shared-styles"
+      ]
     },
     "ui-ng-hola-mundo2": {
-      "tags": ["ui"]
+      "tags": ["ui"],
+      "implicitDependencies": [
+        "shared-assets",
+        "shared-styles"
+      ]
     },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
+    },
+    "shared-styles": {
+      "tags": ["scope:shared", "type:styles"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
     }
   }
 }

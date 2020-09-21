@@ -55,15 +55,15 @@
                 "output": "assets"
               }
             ],
-            "styles": ["apps/ui/ng-hola-mundo/src/styles.scss"],
+            "styles": ["libs/shared/styles/src/lib/hola-mundo/index.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ui/ng-hola-mundo/src/environments/environment.ts",
-                  "with": "apps/ui/ng-hola-mundo/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -168,10 +168,18 @@
             "tsConfig": "apps/ui/ng-hola-mundo2/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/ui/ng-hola-mundo2/src/favicon.ico",
-              "apps/ui/ng-hola-mundo2/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
-            "styles": ["apps/ui/ng-hola-mundo2/src/styles.scss"],
+            "styles": ["libs/shared/styles/src/lib/hola-mundo/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -247,6 +255,48 @@
       "sourceRoot": "libs/shared/assets/src",
       "prefix": "ruslan-project",
       "architect": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "prefix": "ruslan-project",
+      "architect": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "ruslan-project",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/environments/tsconfig.lib.json",
+              "libs/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/environments/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
