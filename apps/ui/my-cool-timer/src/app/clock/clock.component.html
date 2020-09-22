@@ -1,0 +1,72 @@
+<div class="clock__container">
+
+  <div class="clock">
+
+    <ng-container *ngIf="clock$ | async as clock; else default">
+      <h1>{{ clock | timeFormat}}</h1>
+    </ng-container>
+
+    <ng-template #default>
+      <h1>00:00:00</h1>
+    </ng-template>
+
+  </div>
+
+</div>
+
+
+<div class="clock__controls">
+  <button #start type="button"><div>PLAY</div></button>
+  <button #pause type="button"><div></div>PAUSE</button>
+  <button #reset type="button"><div></div>RESET</button>
+</div>
+
+
+<div class="clock__stop-alarm" *ngIf="alarmIsPlaying">
+  <button (click)="stopAlarm()" type="button" class="clock__control-stopAlert">
+    STOP ALARM
+  </button>
+</div>
+
+<span *ngIf="alarmIsPlaying">esta sonando</span>
+
+
+<hr>
+<div class="clock__inputs">
+  <label>
+    <input
+      #hours
+      type="number"
+      min="0"
+      max="59"
+      placeholder="hours"
+      [value]="clockService.getHours()"
+      (change)="updateState(hours.value, 'hours')"
+      />
+    <span>Hours</span>
+  </label>
+  <label>
+    <input
+      #minutes
+      type="number"
+      min="0"
+      max="59"
+      placeholder="minutes"
+      [value]="clockService.getMinutes()"
+      (change)="updateState(minutes.value, 'minutes')"
+      />
+    <span>Minutes</span>
+  </label>
+  <label>
+    <input
+      #seconds
+      type="number"
+      min="0"
+      max="59"
+      placeholder="seconds"
+      [value]="clockService.getSeconds()"
+      (change)="updateState(seconds.value, 'seconds')"
+      />
+    <span>Seconds</span>
+  </label>
+</div>

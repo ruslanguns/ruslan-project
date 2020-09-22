@@ -27,17 +27,11 @@
   "projects": {
     "ui-ng-hola-mundo": {
       "tags": ["ui"],
-      "implicitDependencies": [
-        "shared-assets",
-        "shared-styles"
-      ]
+      "implicitDependencies": ["shared-assets", "shared-styles"]
     },
     "ui-ng-hola-mundo2": {
       "tags": ["ui"],
-      "implicitDependencies": [
-        "shared-assets",
-        "shared-styles"
-      ]
+      "implicitDependencies": ["shared-assets", "shared-styles"]
     },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
@@ -47,6 +41,9 @@
     },
     "shared-environments": {
       "tags": ["scope:shared", "type:environments"]
+    },
+    "ui-my-cool-timer": {
+      "tags": []
     }
   }
 }
