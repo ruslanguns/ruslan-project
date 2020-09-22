@@ -302,6 +302,108 @@
           "style": "scss"
         }
       }
+    },
+    "ui-my-cool-timer": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/ui/my-cool-timer",
+      "sourceRoot": "apps/ui/my-cool-timer/src",
+      "prefix": "ruslan-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ui/my-cool-timer",
+            "index": "apps/ui/my-cool-timer/src/index.html",
+            "main": "apps/ui/my-cool-timer/src/main.ts",
+            "polyfills": "apps/ui/my-cool-timer/src/polyfills.ts",
+            "tsConfig": "apps/ui/my-cool-timer/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": ["apps/ui/my-cool-timer/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ui/my-cool-timer/src/environments/environment.ts",
+                  "with": "apps/ui/my-cool-timer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ui-my-cool-timer:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ui-my-cool-timer:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ui-my-cool-timer:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ui/my-cool-timer/tsconfig.app.json",
+              "apps/ui/my-cool-timer/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ui/my-cool-timer/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ui/my-cool-timer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

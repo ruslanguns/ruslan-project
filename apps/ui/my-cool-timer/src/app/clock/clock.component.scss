@@ -1,0 +1,91 @@
+
+:host {
+  color: #FFFFFF;
+  max-width: 100%;
+}
+
+.clock__container {
+  .clock {
+    font-size: calc(20px + 6 * ((100vw - 110px) / 150));
+  }
+}
+
+.clock__controls {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+
+  &:nth-child(1) {
+    background-color: blue;
+  }
+
+  & > button {
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin: 5px;
+    border: 1px solid #FFFFFF;
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #454e56;
+      border-color: #454e56;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.clock__stop-alarm {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  & > button {
+    display: block;
+    padding: 20px 90px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin: 5px;
+    border: 1px solid #FFFFFF;
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #3e2544;
+      border-color: #3e2544;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.clock__inputs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 14px;
+  max-width: 100%;
+
+  & > label > input {
+    border: none;
+    background: #454e56;
+    color: #FFFFFF;
+    height: 3em;
+    width: 3em;
+    text-align: center;
+    margin: 0 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  span {
+    display: block;
+  }
+}

@@ -1,0 +1,48 @@
+<div class="clock__container">
+  <div class="clock">
+    <h1>00:00:00</h1>
+  </div>
+</div>
+<div class="clock__controls">
+  <button #start type="button"><div>PLAY</div></button>
+  <button #pause type="button"><div></div>PAUSE</button>
+  <button #reset type="button"><div></div>RESET</button>
+</div>
+<div class="clock__stop-alarm">
+  <button class="clock__control-stopAlert">
+    STOP ALARM
+  </button>
+</div>
+<hr>
+<div class="clock__inputs">
+  <label>
+    <input
+      #hours
+      type="number"
+      min="0"
+      max="59"
+      placeholder="hours"
+      />
+    <span>Hours</span>
+  </label>
+  <label>
+    <input
+      #minutes
+      type="number"
+      min="0"
+      max="59"
+      placeholder="minutes"
+      />
+    <span>Minutes</span>
+  </label>
+  <label>
+    <input
+      #seconds
+      type="number"
+      min="0"
+      max="59"
+      placeholder="seconds"
+      />
+    <span>Seconds</span>
+  </label>
+</div>
