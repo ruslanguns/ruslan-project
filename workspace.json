@@ -404,6 +404,100 @@
           }
         }
       }
+    },
+    "ui-scully-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/ui/scully-app",
+      "sourceRoot": "apps/ui/scully-app/src",
+      "prefix": "ruslan-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ui/scully-app",
+            "index": "apps/ui/scully-app/src/index.html",
+            "main": "apps/ui/scully-app/src/main.ts",
+            "polyfills": "apps/ui/scully-app/src/polyfills.ts",
+            "tsConfig": "apps/ui/scully-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ui/scully-app/src/favicon.ico",
+              "apps/ui/scully-app/src/assets"
+            ],
+            "styles": ["apps/ui/scully-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ui/scully-app/src/environments/environment.ts",
+                  "with": "apps/ui/scully-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ui-scully-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ui-scully-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ui-scully-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ui/scully-app/tsconfig.app.json",
+              "apps/ui/scully-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ui/scully-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ui/scully-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

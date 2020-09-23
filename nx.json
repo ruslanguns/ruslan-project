@@ -44,6 +44,9 @@
     },
     "ui-my-cool-timer": {
       "tags": []
+    },
+    "ui-scully-app": {
+      "tags": []
     }
   }
 }
