@@ -404,6 +404,64 @@
           }
         }
       }
+    },
+    "api-nest-resource-generator": {
+      "root": "apps/api/nest-resource-generator",
+      "sourceRoot": "apps/api/nest-resource-generator/src",
+      "projectType": "application",
+      "prefix": "api-nest-resource-generator",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/api/nest-resource-generator",
+            "main": "apps/api/nest-resource-generator/src/main.ts",
+            "tsConfig": "apps/api/nest-resource-generator/tsconfig.app.json",
+            "assets": ["apps/api/nest-resource-generator/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/nest-resource-generator/src/environments/environment.ts",
+                  "with": "apps/api/nest-resource-generator/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api-nest-resource-generator:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/api/nest-resource-generator/tsconfig.app.json",
+              "apps/api/nest-resource-generator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/nest-resource-generator/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/api/nest-resource-generator/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -10,6 +10,7 @@ Este es un proyecto del canal de Ruslan Gonzalez
 - [Parte 3 21-09-2020](https://youtu.be/ndqC-kGz8oA): Extraemos el NX Workspace en librerías, en este vídeo hemos extraido los environments y estilos scss.
 - [Parte 4-1 22-09-2020](https://youtu.be/PbzaJbo7d5o): Proyecto: "Cool Timer" con ReactiveX en Angular y Nx - LIVE PARTE 4-1.
 - [Parte 4-2 22-09-2020](https://youtu.be/-HBkl7AG36c): Proyecto: "Cool Timer" con ReactiveX en Angular y Nx - LIVE PARTE 4-2.
+- [Parte 5 23-09-2020](https://www.youtube.com/watch?v=EFrKfBGBJqs): Aprenderemos a usar los NestJS CLI Resource Generators - LIVE PARTE 5.
 
 
 >This project was generated using [Nx](https://nx.dev).

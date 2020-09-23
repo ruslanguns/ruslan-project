@@ -44,6 +44,9 @@
     },
     "ui-my-cool-timer": {
       "tags": []
+    },
+    "api-nest-resource-generator": {
+      "tags": []
     }
   }
 }
